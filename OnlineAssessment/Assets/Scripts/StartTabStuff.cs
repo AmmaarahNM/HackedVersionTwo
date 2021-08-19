@@ -6,6 +6,9 @@ public class StartTabStuff : MonoBehaviour
 {
     bool startTabOpen;
     public GameObject startTab;
+
+    
+
     // Start is called before the first frame update
     void Start()
     {

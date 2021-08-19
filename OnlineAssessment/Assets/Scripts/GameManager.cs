@@ -50,20 +50,29 @@ public class GameManager : MonoBehaviour
 
     public GameObject testWindow;
 
+    public Animator anim;
+
+    public int NotificationCounter;
+
+   
+    public GameObject OneNotificationImage;
+
     public bool googleActive;
     //public bool terminalTwoActivated;
     // Start is called before the first frame update
     void Start()
     {
         //missingFilesText.SetActive(false);
-        newEmail.SetActive(false);
+        //newEmail.SetActive(false);
 
         Invoke("Notify", 1.2f);
     }
 
     void Notify()
     {
-        newEmail.SetActive(true);
+        NotificationCounter++;
+        anim.SetBool("isNotified", true);
+        //newEmail.SetActive(true);
     }
     // Update is called once per frame
     void Update()
@@ -126,8 +135,8 @@ public class GameManager : MonoBehaviour
 
 
         }*/
-      
 
+        NotificationTab();
         
     }
 
@@ -246,4 +255,20 @@ public class GameManager : MonoBehaviour
             fightVirus.text = "Destroy the baby viruses!";
         }
     }*/
+
+    public void NotificationTab()
+    {
+        if (NotificationCounter != null)
+        {
+            if (NotificationCounter == 1)
+            {
+                OneNotificationImage.SetActive(true);
+            }
+            
+        }
+        else
+        {
+            OneNotificationImage.SetActive(false);
+        }
+    }
 }

@@ -19,7 +19,7 @@ public class TimerController : MonoBehaviour
     public TMP_Text TimerText;
 
     public float minutes;
-    public float seconds;
+    public float hours;
 
     [Header("--Event Timer--")]
     public bool useEventTimer;
@@ -28,23 +28,22 @@ public class TimerController : MonoBehaviour
     private void Start()
     {
         StartingTime = TotalTime;
-        
+        clock.SetActive(true);
     }
 
 
     private void Update()
     {
-        if (hasSartedTest)
-        {
-            TotalTime -= Time.deltaTime;
-        }
         
+        TotalTime += Time.deltaTime;
+        
+        
+        hours = (int)(TotalTime / 360);
         minutes = (int)(TotalTime / 60);
-        seconds = (int)(TotalTime % 60);
 
         if (useEventTimer)
         {
-            if (minutes <= 0 && seconds <= 0)
+            if (hours <= 0 && minutes <= 0)
             {
                 
                 TotalTime = 0;
@@ -54,14 +53,14 @@ public class TimerController : MonoBehaviour
             }
         }
 
-        TimerText.text = minutes.ToString() + " : " + seconds.ToString();
+        TimerText.text = hours.ToString() + " : " + minutes.ToString();
 
     }
 
     public void StartTestBtn()
     {
         hasSartedTest = true;
-        clock.SetActive(true);
+        
 
     }
 }
