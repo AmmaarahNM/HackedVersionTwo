@@ -9,6 +9,8 @@ public class IconPopUps : MonoBehaviour
     public GameObject bottomTabIcon;
     public bool thiswWindowOpen;
     public RectTransform appWindowTransform;
+
+    
     
     // Start is called before the first frame update
     void Start()
@@ -16,11 +18,14 @@ public class IconPopUps : MonoBehaviour
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (GM.emailOpened == true)
+        {
+            GM.OneNotificationImage.SetActive(true);
+        }
     }
+
 
     private void OnMouseDown()
     {
@@ -38,7 +43,12 @@ public class IconPopUps : MonoBehaviour
 
         //sound of enemy dying
         FindObjectOfType<MusicManager>().Play("CorrectSound");
-        
+
+        if (appWindow.name == "EmailWindow")
+        {
+            GM.emailOpened = true;
+        }
+
     }
 
     public void CloseWindow()

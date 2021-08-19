@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
    
     public GameObject OneNotificationImage;
 
+    public bool emailOpened;
+
     public bool googleActive;
     //public bool terminalTwoActivated;
     // Start is called before the first frame update
@@ -137,6 +139,15 @@ public class GameManager : MonoBehaviour
         }*/
 
         NotificationTab();
+
+        if (emailOpened == true)
+        {
+            OneNotificationImage.SetActive(false);
+        }
+        else
+        {
+            OneNotificationImage.SetActive(true);
+        }
         
     }
 
@@ -186,12 +197,15 @@ public class GameManager : MonoBehaviour
 
     public void OpenNewEmail()
     {
+        emailOpened = true;
+
         newEmail.SetActive(false);
         emailWindow.SetActive(true);
         bottomEmailIcon.SetActive(true);
         //windowOpen = true;
         completeAssessment.text = "Complete online exam!";
-
+        
+        
     }
 
    /* public void SwitchWindows()

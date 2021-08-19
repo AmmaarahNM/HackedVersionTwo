@@ -43,10 +43,10 @@ public class TimerController : MonoBehaviour
 
         if (useEventTimer)
         {
-            if (hours <= 0 && minutes <= 0)
+            if (hours >= 23 && minutes >= 59)
             {
                 
-                TotalTime = 0;
+                TotalTime = StartingTime;
                 Debug.Log("Event");
                // finished.SetActive(true);
                 TimerEvent.Invoke();

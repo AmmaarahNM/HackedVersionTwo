@@ -5,7 +5,7 @@ using UnityEngine;
 public class StartTabStuff : MonoBehaviour
 {
     bool startTabOpen;
-    public GameObject startTab;
+    public GameObject startWindow;
 
     
 
@@ -25,14 +25,15 @@ public class StartTabStuff : MonoBehaviour
     {
         if (!startTabOpen)
         {
-            startTab.SetActive(true);
+            startWindow.SetActive(true);
             startTabOpen = true;
         }
 
         else
         {
-            startTab.SetActive(false);
+            startWindow.SetActive(false);
             startTabOpen = false;
         }
+
     }
 }
