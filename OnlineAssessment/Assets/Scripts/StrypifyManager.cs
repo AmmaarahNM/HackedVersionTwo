@@ -7,20 +7,36 @@ public class StrypifyManager : MonoBehaviour
     public AudioSource[] songs;
     public bool musicPlaying;
     AudioSource currentSong;
+    public GameObject playButton;
+    public GameObject pauseButton;
+    public bool isCurrentPlaying;
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentSong = songs[0];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        isCurrentPlaying = currentSong.isPlaying;
+        /*if (!currentSong.isPlaying && musicPlaying)
+        {
+            for (int i = 0; i < songs.Length; i++)
+            {
+                if (songs[i] == currentSong)
+                {
+                    songs[i + 1].Play();
+                    currentSong = songs[i + 1];
+                }
+            }
+        }*/
+
     }
 
     public void SongClicked(AudioSource song) //buttons with each song title on it set to play that song
     {
+        Debug.Log(song.name);
         if (!song.isPlaying)
         {
             //stop all songs
@@ -39,21 +55,30 @@ public class StrypifyManager : MonoBehaviour
     {
         if (musicPlaying)
         {
-            //change icon to pause
+            pauseButton.SetActive(true);
+            playButton.SetActive(false);
             currentSong.Pause();
             musicPlaying = false;
         }
 
         else
         {
-            //change icon to play
+            pauseButton.SetActive(false);
+            playButton.SetActive(true);
             currentSong.Play();
             musicPlaying = true;
         }
     }
 
-    public void LoopPlaylist()
+    public void NextSong()
     {
-
+        for (int i = 0; i < songs.Length; i++)
+        {
+            if (songs[i] == currentSong)
+            {
+                songs[i + 1].Play();
+                currentSong = songs[i + 1];
+            }
+        }
     }
 }
