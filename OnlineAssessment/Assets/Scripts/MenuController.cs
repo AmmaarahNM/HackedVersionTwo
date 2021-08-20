@@ -7,7 +7,7 @@ public class MenuController : MonoBehaviour
 {
     public GameManager GM;
 
-    private string Start = "StartingDesktop";
+    private string Start = "DesktopTwo";
 
     public void StartBtn()
     {
@@ -30,8 +30,15 @@ public class MenuController : MonoBehaviour
         Debug.Log("Quitting...");
     }
 
+
     public void Begin()
     {
         SceneManager.LoadScene(Start);
+    }
+
+
+    public void LogOff()
+    {
+        SceneManager.LoadScene(0);
     }
 }

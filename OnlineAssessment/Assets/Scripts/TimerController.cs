@@ -4,42 +4,92 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using TMPro;
+using System;
 
 public class TimerController : MonoBehaviour
 {
-    private float StartingTime;
+    //private float StartingTime;
 
-    public bool hasSartedTest;
+    //public bool hasSartedTest;
+
+    public static TimerController instance;
+
+    public bool timerGoing;
+
+    private float elapsedTime;
+
+    private TimeSpan timePlaying;
+
     public GameObject clock;
+
+    public int timerSpeed;
+
+    public bool isHacked;
 
     //public GameObject finished;
     
-    public float TotalTime;
+    //public float TotalTime;
 
     public TMP_Text TimerText;
 
-    public float minutes;
-    public float hours;
+    //public float minutes;
+    //public float hours;
 
-    [Header("--Event Timer--")]
+   /* [Header("--Event Timer--")]
     public bool useEventTimer;
-    public UnityEvent TimerEvent;
+    public UnityEvent TimerEvent;*/
 
     private void Start()
     {
-        StartingTime = TotalTime;
-        clock.SetActive(true);
+        //StartingTime = TotalTime;
+        //clock.SetActive(true);
+
+        timerGoing = false;
+        //isHacked = true;
+
     }
 
+    private void Awake()
+    {
+        instance = this;
+    }
 
-    private void Update()
+    public void BeginTimer()
+    {
+        timerGoing = true;
+        isHacked = true;
+        elapsedTime = 0f;
+
+        StartCoroutine(UpdateTimer());
+    }
+
+    public void EndTimer()
+    {
+        timerGoing = false;
+    }
+
+    private IEnumerator UpdateTimer()
+    {
+        while (timerGoing)
+        {
+            elapsedTime = Time.deltaTime;
+            timePlaying = TimeSpan.FromMinutes(elapsedTime);
+            string startTimePlayText = timePlaying.ToString("hh':'mm'.'ss");
+            TimerText.text = startTimePlayText;
+
+            yield return null;
+        }
+    }
+
+    /*private void Update()
     {
         
-        TotalTime += Time.deltaTime;
+        TotalTime += Time.deltaTime*timerSpeed;
         
         
         hours = (int)(TotalTime / 360);
         minutes = (int)(TotalTime / 60);
+       
 
         if (useEventTimer)
         {
@@ -47,7 +97,7 @@ public class TimerController : MonoBehaviour
             {
                 
                 TotalTime = StartingTime;
-                Debug.Log("Event");
+                //Debug.Log("Event");
                // finished.SetActive(true);
                 TimerEvent.Invoke();
             }
@@ -62,5 +112,32 @@ public class TimerController : MonoBehaviour
         hasSartedTest = true;
         
 
+    }*/
+
+
+    private void Update()
+    {
+        if (isHacked == false)
+        {
+            DateTime time = DateTime.Now;
+            string hour = LeadingZero(time.Hour);
+            string minute = LeadingZero(time.Minute);
+
+            TimerText.text = hour + ":" + minute;
+        }
+        else if (isHacked == true)
+        {
+           // BeginTimer();
+        }
+
+
     }
+
+    string LeadingZero(int n)
+    {
+        return n.ToString().PadLeft(2, '0');
+    }
+
+
+
 }
