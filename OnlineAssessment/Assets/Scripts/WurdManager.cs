@@ -8,6 +8,8 @@ public class WurdManager : MonoBehaviour
     public GameObject newFile;
     public GameObject assignmentFile;
     public IconPopUps IPU;
+    public GameObject[] files;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,17 +30,38 @@ public class WurdManager : MonoBehaviour
         newFile.SetActive(true);
     }
 
-    public void AssignmentFile()
+    public void OpenCorruptedFile()
     {
-        //if not solved - error about file path shows up
-        //sets off whole search
-        //else open assignment file
+        if (TimerController.instance.isHacked)
+        {
+            //close first open
+            //open corrupted file
+        }
+
+        else
+        {
+            firstOpen.SetActive(false);
+            assignmentFile.SetActive(true);
+        }
+
+    }
+
+    public void AssignmentFile(GameObject file)
+    {
+
+        firstOpen.SetActive(false);
+        file.SetActive(true);
+        
     }
 
     public void Back()
     {
         firstOpen.SetActive(true);
-        assignmentFile.SetActive(false);
-        newFile.SetActive(false);
+        foreach (GameObject file in files)
+        {
+            file.SetActive(false);
+        }
+        
+        
     }
 }

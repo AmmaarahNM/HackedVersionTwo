@@ -20,17 +20,18 @@ public class StrypifyManager : MonoBehaviour
     void Update()
     {
         isCurrentPlaying = currentSong.isPlaying;
-        /*if (!currentSong.isPlaying && musicPlaying)
+        if (!currentSong.isPlaying && musicPlaying)
         {
             for (int i = 0; i < songs.Length; i++)
             {
                 if (songs[i] == currentSong)
                 {
-                    songs[i + 1].Play();
                     currentSong = songs[i + 1];
+                    currentSong.Play();
+                    break;
                 }
             }
-        }*/
+        }
 
     }
 

@@ -18,7 +18,7 @@ public class BottomTabIcons : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (IPU.thiswWindowOpen == true)
         {

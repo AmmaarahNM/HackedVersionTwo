@@ -27,13 +27,13 @@ public class IconPopUps : MonoBehaviour
     }
 
 
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         Debug.Log(gameObject.name + " clicked");
         
         
         GM.newEmail.SetActive(false);
-        GM.completeAssessment.text = "Complete and submit online assignment!";
+        //GM.completeAssessment.text = "Complete and submit online assignment!";
         appWindow.SetActive(true);
         bottomTabIcon.SetActive(true);
         thiswWindowOpen = true;
