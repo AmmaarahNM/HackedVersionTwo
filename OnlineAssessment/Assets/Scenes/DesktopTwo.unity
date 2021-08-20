@@ -32120,6 +32120,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   songs:
+  - {fileID: 647170342}
+  - {fileID: 1689527481}
   - {fileID: 926253507}
   - {fileID: 929013834}
   - {fileID: 1757711861}
@@ -32127,8 +32129,6 @@ MonoBehaviour:
   - {fileID: 2087127925}
   - {fileID: 11215952}
   - {fileID: 1133413840}
-  - {fileID: 647170342}
-  - {fileID: 1689527481}
   musicPlaying: 0
   playButton: {fileID: 15544543}
   pauseButton: {fileID: 1724245419}
@@ -33582,7 +33582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1954313474
 RectTransform:
   m_ObjectHideFlags: 0
