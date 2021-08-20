@@ -76,8 +76,13 @@ public class StrypifyManager : MonoBehaviour
         {
             if (songs[i] == currentSong)
             {
-                songs[i + 1].Play();
+                foreach (AudioSource songIndex in songs)
+                {
+                    songIndex.Stop();
+                }
                 currentSong = songs[i + 1];
+                currentSong.Play();
+                break;
             }
         }
     }
