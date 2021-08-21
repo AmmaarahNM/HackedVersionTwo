@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
    
     public GameObject OneNotificationImage;
 
+    public GameObject welcome;
+
     public bool emailOpened;
 
     public bool googleActive;
@@ -67,11 +69,24 @@ public class GameManager : MonoBehaviour
         //missingFilesText.SetActive(false);
         //newEmail.SetActive(false);
 
-        Invoke("Notify", 1.2f);
+        Invoke("Welcome", 1.2f);
+    }
+
+    void Welcome()
+    {
+        welcome.SetActive(true);
+        Invoke("Disappear", 6.8f);
+    }
+
+    void Disappear()
+    {
+        welcome.SetActive(false);
+        Invoke("Notify", 3f);
     }
 
     void Notify()
     {
+       
         NotificationCounter++;
         anim.SetBool("isNotified", true);
         //newEmail.SetActive(true);

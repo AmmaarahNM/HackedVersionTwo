@@ -24,15 +24,14 @@ public class SavingController : MonoBehaviour
     public string CorrectQ4 = "Deductible";
     public string CorrectQ5 = "Pronunciation";
 
-    public GameObject terminal;
-    public HackerTerminal hackerScreen;
+    
 
     public Image assignmentDoneLine;
 
 
     void Start()
     {
-        terminal.SetActive(false);
+        assignmentDoneLine.enabled = false;
         QAArr = new QAClass[QuestionGroupArr.Length];
     }
 
