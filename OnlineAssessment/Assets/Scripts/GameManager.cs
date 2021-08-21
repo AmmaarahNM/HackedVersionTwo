@@ -62,6 +62,10 @@ public class GameManager : MonoBehaviour
     public bool emailOpened;
 
     public bool googleActive;
+
+    public bool colourGone;
+    public GameObject[] colourItems;
+    public GameObject[] greyItems;
     //public bool terminalTwoActivated;
     // Start is called before the first frame update
     void Start()
@@ -94,6 +98,31 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (colourGone)
+        {
+            foreach (GameObject item in colourItems)
+            {
+                item.SetActive(false);
+            }
+
+            foreach (GameObject item in greyItems)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        else
+        {
+            foreach (GameObject item in colourItems)
+            {
+                item.SetActive(true);
+            }
+
+            foreach (GameObject item in greyItems)
+            {
+                item.SetActive(false);
+            }
+        }
         /*if (virusActive)
         {
             //put fight off the virus in the sticky note

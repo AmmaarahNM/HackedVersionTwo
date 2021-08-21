@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StrypifyManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class StrypifyManager : MonoBehaviour
     public GameObject playButton;
     public GameObject pauseButton;
     public bool isCurrentPlaying;
+    public Text nameDisplayed;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class StrypifyManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        nameDisplayed.text = currentSong.name;
         isCurrentPlaying = currentSong.isPlaying;
         if (!currentSong.isPlaying && musicPlaying)
         {
@@ -56,16 +59,16 @@ public class StrypifyManager : MonoBehaviour
     {
         if (musicPlaying)
         {
-            pauseButton.SetActive(true);
-            playButton.SetActive(false);
+            pauseButton.SetActive(false);
+            playButton.SetActive(true);
             currentSong.Pause();
             musicPlaying = false;
         }
 
         else
         {
-            pauseButton.SetActive(false);
-            playButton.SetActive(true);
+            pauseButton.SetActive(true);
+            playButton.SetActive(false);
             currentSong.Play();
             musicPlaying = true;
         }
@@ -83,6 +86,7 @@ public class StrypifyManager : MonoBehaviour
                 }
                 currentSong = songs[i + 1];
                 currentSong.Play();
+                musicPlaying = true;
                 break;
             }
         }
