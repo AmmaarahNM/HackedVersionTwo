@@ -7,6 +7,7 @@ public class ReloadScreen : MonoBehaviour
 {
     public Text progressPercent;
     public int percent;
+    public UploadScript uploadScript;
 
 
     void Update()
@@ -71,6 +72,6 @@ public class ReloadScreen : MonoBehaviour
     private void Ten()
     {
         percent = 100;
-        
+        uploadScript.ReloadDone();
     }
 }

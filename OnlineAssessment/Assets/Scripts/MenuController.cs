@@ -41,4 +41,9 @@ public class MenuController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void LoginScreen()
+    {
+        SceneManager.LoadScene("LoginScreen");
+    }
 }
