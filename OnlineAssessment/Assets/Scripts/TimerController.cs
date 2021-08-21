@@ -31,7 +31,7 @@ public class TimerController : MonoBehaviour
     //public float TotalTime;
 
     public TMP_Text TimerText;
-    public Text timertext;
+    
 
     //public float minutes;
     //public float hours;
@@ -56,7 +56,7 @@ public class TimerController : MonoBehaviour
     {
         timerGoing = true;
         isHacked = true;
-        elapsedTime = 0f;
+        elapsedTime = 59f;
 
         StartCoroutine(UpdateTimer());
     }
@@ -70,7 +70,7 @@ public class TimerController : MonoBehaviour
     {
         while (timerGoing)
         {
-            elapsedTime += Time.deltaTime*20;
+            elapsedTime += Time.deltaTime*timerSpeed;
             timePlaying = TimeSpan.FromMinutes(elapsedTime);
             string startTimePlayText = timePlaying.ToString("hh':'mm");
             TimerText.text = startTimePlayText;
