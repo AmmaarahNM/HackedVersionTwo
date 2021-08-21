@@ -30,7 +30,7 @@ public class ReloadScreen : MonoBehaviour
     private void Two()
     {
         percent = 12;
-        Invoke("Three", 1f);
+        Invoke("Three", 0.8f);
     }
     private void Three()
     {
@@ -45,28 +45,28 @@ public class ReloadScreen : MonoBehaviour
     private void Five()
     {
         percent = 36;
-        Invoke("Six", 2f);
+        Invoke("Six", 1f);
     }
     private void Six()
     {
         percent = 49;
-        Invoke("Seven", 3f);
+        Invoke("Seven", 2f);
     }
     private void Seven()
     {
         percent = 60;
-        Invoke("Eight", 3f);
+        Invoke("Eight", 1f);
     }
     private void Eight()
     {
         percent = 72;
-        Invoke("Nine", 5f);
+        Invoke("Nine", 0.8f);
     }
 
     private void Nine()
     {
         percent = 93;
-        Invoke("Ten", 5f);
+        Invoke("Ten", 4f);
     }
 
     private void Ten()

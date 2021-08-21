@@ -13,14 +13,27 @@ public class UploadScript : MonoBehaviour
     public GameObject reloadScreen;
     public bool rightFileSelected;
 
-    public GameObject door;
-    public GameObject notify;
-    public GameObject bubble;
+    public GameObject desktop;
 
+    public bool isUploaded;
+    public bool colourGone;
+    public GameObject[] colourItems;
+    public GameObject[] greyItems;
+
+    public GameObject koreanWelcome;
 
     public void openUpload()
     {
-        UploadTab.SetActive(true);
+        if (isUploaded)
+        {
+            Invoke("HackStart", 0f);
+        }
+        else
+        {
+            UploadTab.SetActive(true);
+        }
+        
+        
     }
     public void Rightfile()
     {
@@ -53,6 +66,9 @@ public class UploadScript : MonoBehaviour
         FoodFilename.SetActive(false);
         error.SetActive(false);
         UploadTab.SetActive(false);
+        colourGone = false;
+        koreanWelcome.SetActive(false);
+
     }
 
     public void UploadButton()
@@ -61,8 +77,8 @@ public class UploadScript : MonoBehaviour
         {
             UploadTab.SetActive(false);
             error.SetActive(true);
-
-            Invoke("HackStart", 6f);
+            isUploaded = true;
+            
         }
     }
    
@@ -70,23 +86,57 @@ public class UploadScript : MonoBehaviour
     public void HackStart()
     {
         reloadScreen.SetActive(true);
-        door.SetActive(false);
-        notify.SetActive(false);
-        bubble.SetActive(false);
+        desktop.SetActive(false);
     }
 
     public void ReloadDone()
     {
         reloadScreen.SetActive(false);
-        door.SetActive(true);
-        notify.SetActive(true);
-        bubble.SetActive(true);
-
+        desktop.SetActive(true);
+        colourGone = true;
+        koreanWelcome.SetActive(true);
         //Reload Screen finishes and hacking starts...timer faster
         TimerController.instance.BeginTimer();
+        Invoke("Disappear", 6.8f);
     }
+
+    void Disappear()
+    {
+        koreanWelcome.SetActive(false);
+        
+    }
+
+    public void ClickDisappear()
+    {
+        koreanWelcome.SetActive(false);
+    }
+
     void Update()
     {
-        
+        if (colourGone)
+        {
+            foreach (GameObject item in colourItems)
+            {
+                item.SetActive(false);
+            }
+
+            foreach (GameObject item in greyItems)
+            {
+                item.SetActive(true);
+            }
+        }
+
+        else
+        {
+            foreach (GameObject item in colourItems)
+            {
+                item.SetActive(true);
+            }
+
+            foreach (GameObject item in greyItems)
+            {
+                item.SetActive(false);
+            }
+        }
     }
 }
