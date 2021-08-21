@@ -83,6 +83,7 @@ public class UploadScript : MonoBehaviour
         bubble.SetActive(true);
 
         //Reload Screen finishes and hacking starts...timer faster
+        TimerController.instance.BeginTimer();
     }
     void Update()
     {

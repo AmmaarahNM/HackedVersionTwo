@@ -31,13 +31,18 @@ public class TimerController : MonoBehaviour
     //public float TotalTime;
 
     public TMP_Text TimerText;
+    public Text timertext;
 
     //public float minutes;
     //public float hours;
 
-   /* [Header("--Event Timer--")]
-    public bool useEventTimer;
-    public UnityEvent TimerEvent;*/
+    /* [Header("--Event Timer--")]
+     public bool useEventTimer;
+     public UnityEvent TimerEvent;*/
+    private void Awake()
+    {
+        instance = this;
+    }
 
     private void Start()
     {
@@ -45,13 +50,6 @@ public class TimerController : MonoBehaviour
         //clock.SetActive(true);
 
         timerGoing = false;
-        //isHacked = true;
-
-    }
-
-    private void Awake()
-    {
-        instance = this;
     }
 
     public void BeginTimer()
@@ -72,9 +70,9 @@ public class TimerController : MonoBehaviour
     {
         while (timerGoing)
         {
-            elapsedTime = Time.deltaTime;
+            elapsedTime += Time.deltaTime*20;
             timePlaying = TimeSpan.FromMinutes(elapsedTime);
-            string startTimePlayText = timePlaying.ToString("hh':'mm'.'ss");
+            string startTimePlayText = timePlaying.ToString("hh':'mm");
             TimerText.text = startTimePlayText;
 
             yield return null;
@@ -124,12 +122,8 @@ public class TimerController : MonoBehaviour
             string minute = LeadingZero(time.Minute);
 
             TimerText.text = hour + ":" + minute;
+            
         }
-        else if (isHacked == true)
-        {
-           // BeginTimer();
-        }
-
 
     }
 
