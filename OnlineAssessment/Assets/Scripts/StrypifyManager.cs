@@ -12,10 +12,15 @@ public class StrypifyManager : MonoBehaviour
     public GameObject pauseButton;
     public bool isCurrentPlaying;
     public Text nameDisplayed;
-    // Start is called before the first frame update
+
+    public GameObject NextBtn;
+    public GameObject BackBtn;
+
+
     void Start()
     {
         currentSong = songs[0];
+        BackBtn.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +39,17 @@ public class StrypifyManager : MonoBehaviour
                     break;
                 }
             }
+        }
+
+        if (musicPlaying)
+        {
+            pauseButton.SetActive(true);
+            playButton.SetActive(false);
+        }
+        else
+        {
+            pauseButton.SetActive(false);
+            playButton.SetActive(true);
         }
 
     }
@@ -76,19 +92,61 @@ public class StrypifyManager : MonoBehaviour
 
     public void NextSong()
     {
+        BackBtn.SetActive(true);
+
         for (int i = 0; i < songs.Length; i++)
         {
+           
+             if (songs[i] == currentSong)
+                {
+                    foreach (AudioSource songIndex in songs)
+                    {
+                        songIndex.Stop();
+                    }
+
+                     if (songs.Length == i + 2)
+                     {
+                       NextBtn.SetActive(false);
+                     }
+
+                    currentSong = songs[i + 1];
+                    currentSong.Play();
+                    musicPlaying = true;
+                    break;
+
+             }
+            
+        }
+    }
+
+    public void BackSong()
+    {
+        NextBtn.SetActive(true);
+
+        Debug.Log("outside");
+        for (int i = 0; i < songs.Length; i++)
+        {
+            Debug.Log("inside");
+
             if (songs[i] == currentSong)
             {
                 foreach (AudioSource songIndex in songs)
                 {
                     songIndex.Stop();
                 }
-                currentSong = songs[i + 1];
+
+                if (i == 1)
+                {
+                    BackBtn.SetActive(false);
+                }
+
+                currentSong = songs[i - 1];
                 currentSong.Play();
                 musicPlaying = true;
                 break;
+
             }
+
         }
     }
 }
