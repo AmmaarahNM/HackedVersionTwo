@@ -43,6 +43,11 @@ public class GameManager : MonoBehaviour
     public GameObject pasteText;
     public GameObject translation;
 
+    public GameObject EmailNotificationBar;
+    public GameObject BWEmailNotificationBar;
+    public NotificationStuffTab NST;
+    
+
 
     void Start()
     {
@@ -119,6 +124,14 @@ public class GameManager : MonoBehaviour
         newEmail.SetActive(false);
         emailWindow.SetActive(true);
         bottomEmailIcon.SetActive(true);
+        EmailNotificationBar.SetActive(false);
+        BWEmailNotificationBar.SetActive(false);
+        if (NST.notificationTabOpen)
+        {
+            NST.OnMouseDown();
+        }
+        
+        //NotificationWindow.SetActive(false);
         
         
         

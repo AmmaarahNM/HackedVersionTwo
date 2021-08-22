@@ -69,6 +69,28 @@ public class StrypifyManager : MonoBehaviour
             //playpause icon set to play
             currentSong = song;
         }
+
+        if (song != songs[0])
+        {
+            BackBtn.SetActive(true);
+        }
+
+        else
+        {
+            BackBtn.SetActive(false);
+        }
+
+        if (song != songs[8])
+        {
+            
+            NextBtn.SetActive(true);
+        }
+
+        else
+        {
+            NextBtn.SetActive(false);
+        }
+
     }
 
     public void PlayAndPause()

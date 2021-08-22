@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NotificationStuffTab : MonoBehaviour
 {
-    bool notificationTabOpen;
+    public bool notificationTabOpen;
     public GameObject notificationWindow;
 
     public GameManager GM;
 
     
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         if (!notificationTabOpen)
         {

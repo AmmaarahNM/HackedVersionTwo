@@ -10,8 +10,11 @@ public class IconPopUps : MonoBehaviour
     public bool thiswWindowOpen;
     public RectTransform appWindowTransform;
 
-    
-    
+    public GameObject[] otherWindows;
+    public IconPopUps[] otherBoolChecks;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,19 @@ public class IconPopUps : MonoBehaviour
         }
     }
 
+    public void DeactivateOtherWindows()
+    {
+        foreach (GameObject window in otherWindows)
+        {
+            window.SetActive(false);
+        }
 
+        foreach (IconPopUps script in otherBoolChecks)
+        {
+            script.thiswWindowOpen = false;
+            script.appWindowTransform.SetAsFirstSibling();
+        }
+    }
     public void OnMouseDown()
     {
         Debug.Log(gameObject.name + " clicked");
@@ -38,6 +53,14 @@ public class IconPopUps : MonoBehaviour
         bottomTabIcon.SetActive(true);
         thiswWindowOpen = true;
         appWindowTransform.SetAsLastSibling();
+
+        if (gameObject.name == "EmailIcon")
+        {
+            GM.EmailNotificationBar.SetActive(false);
+            GM.BWEmailNotificationBar.SetActive(false);
+        }
+
+        DeactivateOtherWindows();
 
         //GM.windowOpen = true;
 

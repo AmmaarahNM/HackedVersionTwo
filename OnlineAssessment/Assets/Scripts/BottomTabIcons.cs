@@ -6,6 +6,7 @@ public class BottomTabIcons : MonoBehaviour
 {
     public IconPopUps IPU;
     public GameObject appWindow;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,8 @@ public class BottomTabIcons : MonoBehaviour
 
         else
         {
+            IPU.DeactivateOtherWindows();
+
             appWindow.SetActive(true);
             IPU.thiswWindowOpen = true;
             IPU.appWindowTransform.SetAsLastSibling();
