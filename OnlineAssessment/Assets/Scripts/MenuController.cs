@@ -9,9 +9,18 @@ public class MenuController : MonoBehaviour
 
     private string Start = "DesktopTwo";
 
+    public GameObject startWindow;
+    public GameObject grayStart;
+
     public void StartBtn()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void closeStart()
+    {
+        startWindow.SetActive(false);
+        grayStart.SetActive(false);
     }
 
     public void DoneBtn()

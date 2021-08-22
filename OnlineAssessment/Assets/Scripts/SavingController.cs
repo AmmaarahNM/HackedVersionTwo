@@ -27,11 +27,13 @@ public class SavingController : MonoBehaviour
     
 
     public Image assignmentDoneLine;
+    public Image grayAssignmentDone;
 
 
     void Start()
     {
         assignmentDoneLine.enabled = false;
+        grayAssignmentDone.enabled = false;
         QAArr = new QAClass[QuestionGroupArr.Length];
     }
 
