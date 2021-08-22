@@ -58,6 +58,9 @@ public class GameController : MonoBehaviour
     public GameObject highlights;
     public GameObject rightclick;
 
+    public bool hackerLeft;
+
+
     public bool isDiscovered;
 
     public void Start()
@@ -260,6 +263,7 @@ public class GameController : MonoBehaviour
 
     public void DisappearNow()
     {
+        hackerLeft = true;
         leaveTime.SetActive(false);
     }
 }

@@ -13,6 +13,8 @@ public class WordDocScript : MonoBehaviour
     public GameObject Doc5;
     public GameObject Doc6;
     public GameObject Doc7;
+    public GameObject Doc8;
+    public GameObject Doc9;
 
     void Start()
     {
@@ -23,6 +25,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
 
     }
 
@@ -35,6 +39,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc2()
     {
@@ -45,6 +51,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc3()
     {
@@ -55,6 +63,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc4()
     {
@@ -65,6 +75,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc5()
     {
@@ -75,6 +87,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(true);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc6()
     {
@@ -85,6 +99,8 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(true);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
     public void openDoc7()
     {
@@ -95,6 +111,34 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(true);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
+    }
+
+    public void openDoc8()
+    {
+        Doc1.SetActive(false);
+        Doc2.SetActive(false);
+        Doc3.SetActive(false);
+        Doc4.SetActive(false);
+        Doc5.SetActive(false);
+        Doc6.SetActive(false);
+        Doc7.SetActive(false);
+        Doc8.SetActive(true);
+        Doc9.SetActive(false);
+    }
+
+    public void openDoc9()
+    {
+        Doc1.SetActive(false);
+        Doc2.SetActive(false);
+        Doc3.SetActive(false);
+        Doc4.SetActive(false);
+        Doc5.SetActive(false);
+        Doc6.SetActive(false);
+        Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(true);
     }
 
     public void goBack()
@@ -106,5 +150,7 @@ public class WordDocScript : MonoBehaviour
         Doc5.SetActive(false);
         Doc6.SetActive(false);
         Doc7.SetActive(false);
+        Doc8.SetActive(false);
+        Doc9.SetActive(false);
     }
 }

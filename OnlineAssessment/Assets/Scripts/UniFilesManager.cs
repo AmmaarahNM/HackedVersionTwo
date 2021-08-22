@@ -6,7 +6,7 @@ public class UniFilesManager : MonoBehaviour
 {
     public IconPopUps IPUword;
     public WurdManager WM;
-    public GameObject fileToOpen;
+    //public GameObject fileToOpen;
     public BottomTabIcons BTIuni;
     // Start is called before the first frame update
     void Start()
@@ -20,18 +20,12 @@ public class UniFilesManager : MonoBehaviour
         
     }
 
-    public void OnMouseDown()
+    public void OnMouseDown(GameObject fileToOpen)
     {
         IPUword.OnMouseDown();
-        if (gameObject.name == "CorrectAssignment")
-        {
-            WM.OpenCorruptedFile();
-        }
-
-        else
-        {
-            WM.AssignmentFile(fileToOpen);
-        }
+        
+        WM.AssignmentFile(fileToOpen);
+        
 
         BTIuni.OnMouseDown();
 

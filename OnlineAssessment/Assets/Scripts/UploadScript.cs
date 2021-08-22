@@ -23,6 +23,11 @@ public class UploadScript : MonoBehaviour
     public GameObject koreanWelcome;
     public GameObject hackerTerminal;
 
+    public GameController GC;
+    public GameObject successfulSub;
+    public GameObject timeOver;
+
+
     public void openUpload()
     {
         if (isUploaded)
@@ -62,6 +67,7 @@ public class UploadScript : MonoBehaviour
     
     void Start()
     {
+        desktop.SetActive(true);
         RightFilename.SetActive(false);
         UniFilename.SetActive(false);
         FoodFilename.SetActive(false);
@@ -76,9 +82,20 @@ public class UploadScript : MonoBehaviour
     {
         if (rightFileSelected)
         {
-            UploadTab.SetActive(false);
-            error.SetActive(true);
-            isUploaded = true;
+            if (GC.hackerLeft)
+            {
+                successfulSub.SetActive(true);
+                desktop.SetActive(false);
+                
+            }
+
+            else
+            {
+                UploadTab.SetActive(false);
+                error.SetActive(true);
+                isUploaded = true;
+            }
+            
             
         }
     }
@@ -120,6 +137,11 @@ public class UploadScript : MonoBehaviour
 
     void Update()
     {
+        if (TimerController.instance.TimerText.text == "23:59")
+        {
+            timeOver.SetActive(true);
+            desktop.SetActive(false);
+        }
         if (colourGone)
         {
             foreach (GameObject item in colourItems)

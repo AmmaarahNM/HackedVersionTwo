@@ -46,7 +46,9 @@ public class GameManager : MonoBehaviour
     public GameObject EmailNotificationBar;
     public GameObject BWEmailNotificationBar;
     public NotificationStuffTab NST;
-    
+    public Text BWname;
+    public Text COLname;
+
 
 
     void Start()
@@ -57,6 +59,9 @@ public class GameManager : MonoBehaviour
         translation.SetActive(false);
         rightClickMenu2.SetActive(false);
         Invoke("Welcome", 1.2f);
+        BWname.text = PlayerPrefs.GetString("name", "");
+        COLname.text = PlayerPrefs.GetString("name", "");
+
     }
 
     void Welcome()
@@ -87,7 +92,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
       
-        
+       
 
         NotificationTab();
 

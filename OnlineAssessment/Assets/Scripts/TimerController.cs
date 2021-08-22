@@ -56,7 +56,7 @@ public class TimerController : MonoBehaviour
     {
         timerGoing = true;
         isHacked = true;
-        elapsedTime = 59f;
+        elapsedTime = 0f;
 
         StartCoroutine(UpdateTimer());
     }
@@ -71,8 +71,8 @@ public class TimerController : MonoBehaviour
         while (timerGoing)
         {
             elapsedTime += Time.deltaTime*timerSpeed;
-            timePlaying = TimeSpan.FromMinutes(elapsedTime);
-            string startTimePlayText = timePlaying.ToString("hh':'mm");
+            timePlaying = TimeSpan.FromSeconds(elapsedTime);
+            string startTimePlayText = timePlaying.ToString("mm':'ss");
             TimerText.text = startTimePlayText;
 
             yield return null;
@@ -115,7 +115,7 @@ public class TimerController : MonoBehaviour
 
     private void Update()
     {
-        if (isHacked == false)
+        /*if (isHacked == false)
         {
             DateTime time = DateTime.Now;
             string hour = LeadingZero(time.Hour);
@@ -123,7 +123,7 @@ public class TimerController : MonoBehaviour
 
             TimerText.text = hour + ":" + minute;
             
-        }
+        }*/
 
     }
 

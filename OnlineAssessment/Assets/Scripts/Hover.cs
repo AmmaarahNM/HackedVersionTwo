@@ -13,13 +13,18 @@ public class Hover : MonoBehaviour
     }
     public void OnMouseOver()
     {
-
+        Debug.Log("hovering");
         shadow.SetActive(true);
     }
 
 
 
     public void OnMouseExit()
+    {
+        shadow.SetActive(false);
+    }
+
+    public void OnMouseDown()
     {
         shadow.SetActive(false);
     }
