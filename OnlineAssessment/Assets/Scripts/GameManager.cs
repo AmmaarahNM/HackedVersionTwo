@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
    
-    public Text completeAssessment;
+    //public Text completeAssessment;
     
 
     public GameObject goobleIcon;
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     
 
-    public GameObject testWindow;
+    //public GameObject testWindow;
 
     public Animator anim;
 
@@ -36,10 +36,21 @@ public class GameManager : MonoBehaviour
     public bool googleActive;
 
     
-    
-    void Start()
-    {       
+    public GameObject rightClickMenu2;
 
+    public GameObject enterText;
+    public GameObject translateText;
+    public GameObject pasteText;
+    public GameObject translation;
+
+
+    void Start()
+    {
+        enterText.SetActive(true);
+        pasteText.SetActive(false);
+        translateText.SetActive(true);
+        translation.SetActive(false);
+        rightClickMenu2.SetActive(false);
         Invoke("Welcome", 1.2f);
     }
 
@@ -88,7 +99,7 @@ public class GameManager : MonoBehaviour
 
    
 
-    IEnumerator EndHack()
+    /*IEnumerator EndHack()
     {
         yield return new WaitForSeconds(5f);
         
@@ -96,7 +107,7 @@ public class GameManager : MonoBehaviour
         goobleIcon.SetActive(true);
         goobleText.SetActive(true);
         testWindow.SetActive(true);
-    }
+    }*/
 
    
     
@@ -109,7 +120,7 @@ public class GameManager : MonoBehaviour
         emailWindow.SetActive(true);
         bottomEmailIcon.SetActive(true);
         
-        completeAssessment.text = "Complete online exam!";
+        
         
         
     }

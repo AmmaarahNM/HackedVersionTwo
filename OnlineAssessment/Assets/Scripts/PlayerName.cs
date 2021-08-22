@@ -40,12 +40,12 @@ public class PlayerName : MonoBehaviour
     {
         if(inputText.text != empty)
         {
-            SceneManager.LoadScene("DesktopTwo");
             loading.SetActive(true);
+            SceneManager.LoadScene("DesktopTwo");            
             username.SetActive(false);
             savedName = inputText.text;
             PlayerPrefs.SetString("name", savedName);            
-            //username.SetActive(false);
+            
 
         }
         else

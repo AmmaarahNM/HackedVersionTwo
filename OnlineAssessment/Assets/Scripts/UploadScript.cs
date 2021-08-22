@@ -21,6 +21,7 @@ public class UploadScript : MonoBehaviour
     public GameObject[] greyItems;
 
     public GameObject koreanWelcome;
+    public GameObject hackerTerminal;
 
     public void openUpload()
     {
@@ -103,12 +104,18 @@ public class UploadScript : MonoBehaviour
     void Disappear()
     {
         koreanWelcome.SetActive(false);
-        
+        Invoke("beginHack", 4f);
     }
 
     public void ClickDisappear()
     {
         koreanWelcome.SetActive(false);
+        Invoke("beginHack", 4f);
+    }
+
+    public void beginHack()
+    {
+        hackerTerminal.SetActive(true);
     }
 
     void Update()

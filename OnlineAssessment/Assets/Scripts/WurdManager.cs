@@ -5,7 +5,7 @@ using UnityEngine;
 public class WurdManager : MonoBehaviour
 {
     public GameObject firstOpen;
-    public GameObject newFile;
+    //public GameObject newFile;
     public GameObject assignmentFile;
     public IconPopUps IPU;
     public GameObject[] files;
@@ -14,7 +14,7 @@ public class WurdManager : MonoBehaviour
     void Start()
     {
         firstOpen.SetActive(true);
-        newFile.SetActive(false);
+        //newFile.SetActive(false);
         assignmentFile.SetActive(false);
     }
 
@@ -27,7 +27,7 @@ public class WurdManager : MonoBehaviour
     public void NewDoc()
     {
         firstOpen.SetActive(false);
-        newFile.SetActive(true);
+        //newFile.SetActive(true);
     }
 
     public void OpenCorruptedFile()
