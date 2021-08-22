@@ -12,7 +12,7 @@ public class QuestionOne : MonoBehaviour
 
     void Awake()
     {
-        One = "So first, here's a little riddle...." + "\n" + "\n" + "The solution to it will give you an idea on what to look for.." + "\n" + "The answer that I am looking for is something numerical!..."
+        One = "So first, here's a little riddle...." + "\n" + "\n" + "The solution is not the answer, but it will" + "\n" + "give you an idea on what to look for.." + "\n" + "The answer that I am looking for is something numerical!..."
           + "\n" + "\n" + "If a red house is made from red bricks" + "\n" + "and a yellow house from yellow bricks" + "\n" + "what is a greenhouse made from?" ;
 
 
