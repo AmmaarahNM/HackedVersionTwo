@@ -27475,7 +27475,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &643420603
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32269,6 +32269,7 @@ MonoBehaviour:
   Kor2: {fileID: 2135177655}
   Kor3: {fileID: 1746203812}
   Kor4: {fileID: 338439803}
+  updateButton: {fileID: 643420602}
 --- !u!1 &777667330
 GameObject:
   m_ObjectHideFlags: 0

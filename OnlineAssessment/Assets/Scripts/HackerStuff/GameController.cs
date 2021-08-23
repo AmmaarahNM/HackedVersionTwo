@@ -94,7 +94,7 @@ public class GameController : MonoBehaviour
     public GameObject Kor3;
     public GameObject Kor4;
 
-
+    public GameObject updateButton;
     public void Start()
     {
         comm.SetActive(false);
@@ -188,10 +188,25 @@ public class GameController : MonoBehaviour
     public void FirstQ()
     {
         comm.SetActive(false);
-        OneQ.SetActive(true);          
+        OneQ.SetActive(true);
+        Invoke("firstInputActive", 18f);
+        
+    }
+
+    public void firstInputActive()
+    {
         firstInput.SetActive(true);
     }
 
+    public void secondInputActive()
+    {
+        secondInput.SetActive(true);
+    }
+
+    public void thirdInputActive()
+    {
+        thirdInput.SetActive(true);
+    }
 
     public void GetAnswerOne(string first)
     {
@@ -340,6 +355,7 @@ public class GameController : MonoBehaviour
     public void corruptSuccess()
     {
         antivirus.SetActive(true);
+        updateButton.SetActive(true);
         Input3.SetActive(false);
         inputText3.SetActive(true);
     }
@@ -353,7 +369,7 @@ public class GameController : MonoBehaviour
         colour.SetActive(false);
         TwoQ.SetActive(true);
         copyText.SetActive(true);
-        secondInput.SetActive(true);
+        Invoke("secondInputActive", 18f);
 
         /*foreach (AudioSource songIndex in bwSM.songs)
         {
@@ -381,7 +397,7 @@ public class GameController : MonoBehaviour
         language.SetActive(false);
         wifi.SetActive(true);
         ThreeQ.SetActive(true);
-        thirdInput.SetActive(true);
+        Invoke("firstInputActive", 18f);
 
         foreach (GameObject stickyText in stickyKorean)
         {
