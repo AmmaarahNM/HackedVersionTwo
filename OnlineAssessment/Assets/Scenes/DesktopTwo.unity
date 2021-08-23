@@ -2659,8 +2659,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 2075601532}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 492676863}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 1057938623}
+  - {fileID: 113142121}
+  - {fileID: 467510706}
+  - {fileID: 212234600}
+  - {fileID: 748306752}
+  - {fileID: 1485388078}
+  otherBoolChecks:
+  - {fileID: 1159212981}
+  - {fileID: 2016317255}
+  - {fileID: 1905258569}
+  - {fileID: 1160324337}
+  - {fileID: 1959829764}
+  - {fileID: 1765874236}
 --- !u!61 &60396121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5104,6 +5116,7 @@ MonoBehaviour:
   pasteText: {fileID: 649043049}
   translation: {fileID: 1763911268}
   overText: 0
+  isCopied: 0
 --- !u!114 &122761127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5576,7 +5589,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ed1a6c2985bd68d438b0f6b7fc93996a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7735,7 +7748,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -9016,7 +9029,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 414df3b81e65c3b4ea5d5adb4550cfcf, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11377,7 +11390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -11778,7 +11791,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: PlayAndPause
         m_Mode: 1
@@ -15055,13 +15068,12 @@ MonoBehaviour:
   - {fileID: 1638157560}
   - {fileID: 1728255293}
   - {fileID: 727488841}
-  musicPlaying: 0
   playButton: {fileID: 310389679}
   pauseButton: {fileID: 259133316}
-  isCurrentPlaying: 0
   nameDisplayed: {fileID: 2090398362}
   NextBtn: {fileID: 1667467294}
   BackBtn: {fileID: 978789675}
+  GM: {fileID: 2005380156}
 --- !u!1 &351853766
 GameObject:
   m_ObjectHideFlags: 0
@@ -19215,7 +19227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419690987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1142, y: -688, z: -367.37894}
+  m_LocalPosition: {x: 1153, y: -688, z: -367.37894}
   m_LocalScale: {x: 2.42, y: 2.4500003, z: 2.1512241}
   m_Children:
   - {fileID: 597290818}
@@ -20702,7 +20714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 1959829764}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 113142121}
 --- !u!61 &450298896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21040,7 +21052,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1108d64d566f8a9469c269bddfa7d09a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -22583,7 +22595,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4241fcfcd5afc014dbbce34bc5ffab3c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26060,7 +26072,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -187.3, y: 89.8}
-  m_SizeDelta: {x: 356.66, y: 64}
+  m_SizeDelta: {x: 362.49, y: 81.26}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597290819
 MonoBehaviour:
@@ -26084,15 +26096,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -26109,13 +26121,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 68
-  m_fontSizeBase: 68
+  m_fontSize: 79.91
+  m_fontSizeBase: 79.91
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -27199,85 +27211,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625793107}
-  m_CullTransparentMesh: 1
---- !u!1 &627198639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 627198640}
-  - component: {fileID: 627198642}
-  - component: {fileID: 627198641}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &627198640
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627198639}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1977902812}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2, y: 7}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &627198641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627198639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.34509805, g: 0.34509805, b: 0.34509805, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
-    m_FontSize: 22
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: Save
---- !u!222 &627198642
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627198639}
   m_CullTransparentMesh: 1
 --- !u!1 &629232113
 GameObject:
@@ -31242,7 +31175,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ed03b52a76d89714794c9d6afe6f5bd2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -32800,6 +32733,8 @@ MonoBehaviour:
   - {fileID: 74299267}
   isDiscovered: 0
   thirdSucces: 0
+  bwSM: {fileID: 348474682}
+  GM: {fileID: 2005380156}
 --- !u!1 &777667330
 GameObject:
   m_ObjectHideFlags: 0
@@ -32982,7 +32917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 1160324337}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 467510706}
 --- !u!61 &783412422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35728,7 +35663,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -41290,7 +41225,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -42295,7 +42230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: BackSong
         m_Mode: 1
@@ -50016,8 +49951,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 2097929483}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 1609259968}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 113142121}
+  - {fileID: 467510706}
+  - {fileID: 212234600}
+  - {fileID: 748306752}
+  - {fileID: 1485388078}
+  - {fileID: 492676862}
+  otherBoolChecks:
+  - {fileID: 2016317255}
+  - {fileID: 1905258569}
+  - {fileID: 1160324337}
+  - {fileID: 1959829764}
+  - {fileID: 1765874236}
+  - {fileID: 60396120}
 --- !u!114 &1159212982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50222,8 +50169,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 783412419}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 467510707}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 1057938623}
+  - {fileID: 113142121}
+  - {fileID: 748306752}
+  - {fileID: 212234600}
+  - {fileID: 1485388078}
+  - {fileID: 492676862}
+  otherBoolChecks:
+  - {fileID: 2016317255}
+  - {fileID: 1905258569}
+  - {fileID: 1959829764}
+  - {fileID: 1765874236}
+  - {fileID: 60396120}
+  - {fileID: 1159212981}
 --- !u!61 &1160324338
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50510,7 +50469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -55700,7 +55659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 1905258569}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 748306752}
 --- !u!61 &1269158291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -57369,7 +57328,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4ccddb931bed3574cab07859f0d58762, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57698,7 +57657,6 @@ RectTransform:
   - {fileID: 583557337}
   - {fileID: 1475147640}
   - {fileID: 1612117591}
-  - {fileID: 1977902812}
   m_Father: {fileID: 111055629}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -63262,7 +63220,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -69560,7 +69518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 2016317255}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 212234600}
 --- !u!61 &1629105483
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -70199,7 +70157,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4408580fe931cbf459f39a33e3bad97a, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -71654,7 +71612,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: NextSong
         m_Mode: 1
@@ -75153,7 +75111,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ef4edf8916717c947a505059a9685da6, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -76962,8 +76920,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 1958990832}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 1485388082}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 492676862}
+  - {fileID: 748306752}
+  - {fileID: 212234600}
+  - {fileID: 467510706}
+  - {fileID: 113142121}
+  - {fileID: 1057938623}
+  otherBoolChecks:
+  - {fileID: 1159212981}
+  - {fileID: 2016317255}
+  - {fileID: 1905258569}
+  - {fileID: 1160324337}
+  - {fileID: 1959829764}
+  - {fileID: 60396120}
 --- !u!61 &1765874237
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -81045,13 +81015,12 @@ MonoBehaviour:
   - {fileID: 1638157560}
   - {fileID: 1728255293}
   - {fileID: 727488841}
-  musicPlaying: 0
   playButton: {fileID: 15544543}
   pauseButton: {fileID: 1724245419}
-  isCurrentPlaying: 0
   nameDisplayed: {fileID: 1564129555}
   NextBtn: {fileID: 1767586515}
   BackBtn: {fileID: 473835215}
+  GM: {fileID: 2005380156}
 --- !u!1 &1865756165
 GameObject:
   m_ObjectHideFlags: 0
@@ -82869,8 +82838,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 1269158288}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 748306753}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 1057938623}
+  - {fileID: 113142121}
+  - {fileID: 467510706}
+  - {fileID: 212234600}
+  - {fileID: 1485388078}
+  - {fileID: 492676862}
+  otherBoolChecks:
+  - {fileID: 2016317255}
+  - {fileID: 1160324337}
+  - {fileID: 1959829764}
+  - {fileID: 1765874236}
+  - {fileID: 60396120}
+  - {fileID: 1159212981}
 --- !u!61 &1905258570
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -83371,7 +83352,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -85343,7 +85324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 1765874236}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 1485388078}
 --- !u!61 &1958990835
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -85471,8 +85452,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 450298893}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 113142122}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 1057938623}
+  - {fileID: 467510706}
+  - {fileID: 212234600}
+  - {fileID: 748306752}
+  - {fileID: 1485388078}
+  - {fileID: 492676862}
+  otherBoolChecks:
+  - {fileID: 2016317255}
+  - {fileID: 1905258569}
+  - {fileID: 1160324337}
+  - {fileID: 1765874236}
+  - {fileID: 60396120}
+  - {fileID: 1159212981}
 --- !u!61 &1959829765
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -86190,127 +86183,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976824805}
   m_CullTransparentMesh: 1
---- !u!1 &1977902811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1977902812}
-  - component: {fileID: 1977902815}
-  - component: {fileID: 1977902814}
-  - component: {fileID: 1977902813}
-  m_Layer: 5
-  m_Name: Button (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1977902812
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977902811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 627198640}
-  m_Father: {fileID: 1321223250}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 122, y: 148.40999}
-  m_SizeDelta: {x: 45.57, y: 37.12}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1977902813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977902811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.83921576, g: 0.83921576, b: 0.83921576, a: 1}
-    m_HighlightedColor: {r: 0.1882353, g: 0.8117647, b: 0.215558, a: 1}
-    m_PressedColor: {r: 0.16470586, g: 0.6901961, b: 0.18063568, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1977902814}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1977902814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977902811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1977902815
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977902811}
-  m_CullTransparentMesh: 1
 --- !u!1 &1982819526
 GameObject:
   m_ObjectHideFlags: 0
@@ -86852,7 +86724,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -86954,6 +86826,9 @@ MonoBehaviour:
   NST: {fileID: 1572809409}
   BWname: {fileID: 1485142757}
   COLname: {fileID: 374794225}
+  musicPlaying: 0
+  isCurrentPlaying: 0
+  currentSong: {fileID: 0}
 --- !u!4 &2005380157
 Transform:
   m_ObjectHideFlags: 0
@@ -86987,6 +86862,7 @@ MonoBehaviour:
   error: {fileID: 73396206}
   reloadScreen: {fileID: 166040977}
   rightFileSelected: 0
+  errorUploadActivated: 0
   desktop: {fileID: 2059617041}
   isUploaded: 0
   colourGone: 0
@@ -87008,6 +86884,8 @@ MonoBehaviour:
   koreanTitles: {fileID: 161967220}
   englishTitles: {fileID: 400372945}
   iconPop: {fileID: 877646454}
+  colSM: {fileID: 1865568963}
+  GM: {fileID: 2005380156}
 --- !u!1 &2005990924
 GameObject:
   m_ObjectHideFlags: 0
@@ -87527,8 +87405,20 @@ MonoBehaviour:
   bottomTabIcon: {fileID: 1629105480}
   thiswWindowOpen: 0
   appWindowTransform: {fileID: 212234601}
-  otherWindows: []
-  otherBoolChecks: []
+  otherWindows:
+  - {fileID: 113142121}
+  - {fileID: 467510706}
+  - {fileID: 1485388078}
+  - {fileID: 748306752}
+  - {fileID: 492676862}
+  - {fileID: 1057938623}
+  otherBoolChecks:
+  - {fileID: 1905258569}
+  - {fileID: 1160324337}
+  - {fileID: 1959829764}
+  - {fileID: 1765874236}
+  - {fileID: 60396120}
+  - {fileID: 1159212981}
 --- !u!61 &2016317256
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -88950,7 +88840,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e6e603cfa7abc0345a23d7c6af2056aa, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.789
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -90332,7 +90222,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1865568963}
+      - m_Target: {fileID: 348474682}
         m_TargetAssemblyTypeName: StrypifyManager, Assembly-CSharp
         m_MethodName: SongClicked
         m_Mode: 2
@@ -90796,7 +90686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IPU: {fileID: 60396120}
-  appWindow: {fileID: 0}
+  appWindow: {fileID: 492676862}
 --- !u!61 &2075601535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -92040,7 +91930,6 @@ RectTransform:
   m_Children:
   - {fileID: 1406652016}
   - {fileID: 594682943}
-  - {fileID: 2131803559}
   m_Father: {fileID: 1856389790}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -92917,139 +92806,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130978755}
   m_CullTransparentMesh: 1
---- !u!1 &2131803558
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2131803559}
-  - component: {fileID: 2131803562}
-  - component: {fileID: 2131803561}
-  - component: {fileID: 2131803560}
-  m_Layer: 5
-  m_Name: NewEmailNotif
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2131803559
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131803558}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000799, y: 1.0000799, z: 1.0000799}
-  m_Children:
-  - {fileID: 2136736958}
-  m_Father: {fileID: 2102316972}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -209.71358, y: -55.75305}
-  m_SizeDelta: {x: 417.6115, y: 46.4871}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2131803560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131803558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.70980394}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 2131803561}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2005380156}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OpenNewEmail
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2131803561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131803558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &2131803562
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131803558}
-  m_CullTransparentMesh: 1
 --- !u!1 &2133120335
 GameObject:
   m_ObjectHideFlags: 0
@@ -93298,85 +93054,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135177655}
-  m_CullTransparentMesh: 1
---- !u!1 &2136736957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2136736958}
-  - component: {fileID: 2136736960}
-  - component: {fileID: 2136736959}
-  m_Layer: 5
-  m_Name: Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2136736958
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136736957}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2131803559}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2136736959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136736957}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 3
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: '  Inlook - 1 unread email'
---- !u!222 &2136736960
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2136736957}
   m_CullTransparentMesh: 1
 --- !u!1 &2137164185
 GameObject:

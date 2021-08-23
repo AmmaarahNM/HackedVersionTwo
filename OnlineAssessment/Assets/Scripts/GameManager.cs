@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour
     public Text BWname;
     public Text COLname;
 
+    public bool musicPlaying;
+    public bool isCurrentPlaying;
+    public AudioSource currentSong;
 
 
     void Start()
@@ -73,7 +76,7 @@ public class GameManager : MonoBehaviour
     void Disappear()
     {
         welcome.SetActive(false);
-        Invoke("Notify", 3f);
+        Invoke("Notify", 1f);
     }
 
     public void ClickDisappear()

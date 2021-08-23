@@ -12,6 +12,7 @@ public class UploadScript : MonoBehaviour
     public GameObject error;
     public GameObject reloadScreen;
     public bool rightFileSelected;
+    public bool errorUploadActivated;
 
     public GameObject desktop;
 
@@ -34,6 +35,10 @@ public class UploadScript : MonoBehaviour
     public GameObject englishTitles;
 
     public IconPopUps iconPop;
+
+    
+    public StrypifyManager colSM;
+    public GameManager GM;
     public void openUpload()
     {
         if (isUploaded)
@@ -44,7 +49,17 @@ public class UploadScript : MonoBehaviour
             }
             else
             {
-                Invoke("HackStart", 0f);
+                if (!errorUploadActivated)
+                {
+                    foreach (AudioSource songIndex in colSM.songs)
+                    {
+                        songIndex.Stop();
+                    }
+                    GM.musicPlaying = false;
+
+                    Invoke("HackStart", 0f);
+                }
+                
             }
             
         }
@@ -133,6 +148,7 @@ public class UploadScript : MonoBehaviour
 
     public void ReloadDone()
     {
+        errorUploadActivated = true;
         reloadScreen.SetActive(false);
         desktop.SetActive(true);
         colourGone = true;

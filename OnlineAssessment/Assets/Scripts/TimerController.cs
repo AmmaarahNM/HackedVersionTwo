@@ -74,7 +74,7 @@ public class TimerController : MonoBehaviour
             timePlaying = TimeSpan.FromSeconds(elapsedTime);
             string startTimePlayText = timePlaying.ToString("mm':'ss");
             TimerText.text = startTimePlayText;
-
+            
             yield return null;
         }
     }

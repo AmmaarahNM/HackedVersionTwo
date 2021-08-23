@@ -18,6 +18,7 @@ public class SelectionControl : MonoBehaviour
     public GameObject translation;
 
     public bool overText;
+    public bool isCopied;
     public void OnMouseOver()
     {
         highlight.SetActive(true);
@@ -82,12 +83,14 @@ public class SelectionControl : MonoBehaviour
 
     public void Copied()
     {
+        
         rightClickMenu.SetActive(false);
         highlight.SetActive(false);
     }
 
     public void Paste()
     {
+        isCopied = true;
         rightClickMenu2.SetActive(false);
         enterText.SetActive(false);
         pasteText.SetActive(true);
@@ -96,8 +99,12 @@ public class SelectionControl : MonoBehaviour
 
     public void Translating()
     {
-        translateText.SetActive(false);
-        translation.SetActive(true);
+        if (isCopied)
+        {
+            translateText.SetActive(false);
+            translation.SetActive(true);
+        }
+        
     }
 
     public void pasteMenu()

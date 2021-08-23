@@ -6,42 +6,44 @@ using UnityEngine.UI;
 public class StrypifyManager : MonoBehaviour
 {
     public AudioSource[] songs;
-    public bool musicPlaying;
-    AudioSource currentSong;
+    //public bool musicPlaying;
+    //AudioSource currentSong;
     public GameObject playButton;
     public GameObject pauseButton;
-    public bool isCurrentPlaying;
+    //public bool isCurrentPlaying;
     public Text nameDisplayed;
 
     public GameObject NextBtn;
     public GameObject BackBtn;
 
+    public GameManager GM;
+
 
     void Start()
     {
-        currentSong = songs[0];
+        GM.currentSong = songs[0];
         BackBtn.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        nameDisplayed.text = currentSong.name;
-        isCurrentPlaying = currentSong.isPlaying;
-        if (!currentSong.isPlaying && musicPlaying)
+        nameDisplayed.text = GM.currentSong.name;
+        GM.isCurrentPlaying = GM.currentSong.isPlaying;
+        if (!GM.currentSong.isPlaying && GM.musicPlaying)
         {
             for (int i = 0; i < songs.Length; i++)
             {
-                if (songs[i] == currentSong)
+                if (songs[i] == GM.currentSong)
                 {
-                    currentSong = songs[i + 1];
-                    currentSong.Play();
+                    GM.currentSong = songs[i + 1];
+                    GM.currentSong.Play();
                     break;
                 }
             }
         }
 
-        if (musicPlaying)
+        if (GM.musicPlaying)
         {
             pauseButton.SetActive(true);
             playButton.SetActive(false);
@@ -65,9 +67,9 @@ public class StrypifyManager : MonoBehaviour
                 songIndex.Stop();
             }
             song.Play();
-            musicPlaying = true;
+            GM.musicPlaying = true;
             //playpause icon set to play
-            currentSong = song;
+            GM.currentSong = song;
         }
 
         if (song != songs[0])
@@ -95,20 +97,20 @@ public class StrypifyManager : MonoBehaviour
 
     public void PlayAndPause()
     {
-        if (musicPlaying)
+        if (GM.musicPlaying)
         {
             pauseButton.SetActive(false);
             playButton.SetActive(true);
-            currentSong.Pause();
-            musicPlaying = false;
+            GM.currentSong.Pause();
+            GM.musicPlaying = false;
         }
 
         else
         {
             pauseButton.SetActive(true);
             playButton.SetActive(false);
-            currentSong.Play();
-            musicPlaying = true;
+            GM.currentSong.Play();
+            GM.musicPlaying = true;
         }
     }
 
@@ -119,7 +121,7 @@ public class StrypifyManager : MonoBehaviour
         for (int i = 0; i < songs.Length; i++)
         {
            
-             if (songs[i] == currentSong)
+             if (songs[i] == GM.currentSong)
                 {
                     foreach (AudioSource songIndex in songs)
                     {
@@ -131,9 +133,9 @@ public class StrypifyManager : MonoBehaviour
                        NextBtn.SetActive(false);
                      }
 
-                    currentSong = songs[i + 1];
-                    currentSong.Play();
-                    musicPlaying = true;
+                    GM.currentSong = songs[i + 1];
+                    GM.currentSong.Play();
+                    GM.musicPlaying = true;
                     break;
 
              }
@@ -150,7 +152,7 @@ public class StrypifyManager : MonoBehaviour
         {
             Debug.Log("inside");
 
-            if (songs[i] == currentSong)
+            if (songs[i] == GM.currentSong)
             {
                 foreach (AudioSource songIndex in songs)
                 {
@@ -162,9 +164,9 @@ public class StrypifyManager : MonoBehaviour
                     BackBtn.SetActive(false);
                 }
 
-                currentSong = songs[i - 1];
-                currentSong.Play();
-                musicPlaying = true;
+                GM.currentSong = songs[i - 1];
+                GM.currentSong.Play();
+                GM.musicPlaying = true;
                 break;
 
             }

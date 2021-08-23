@@ -75,7 +75,9 @@ public class GameController : MonoBehaviour
     public bool isDiscovered;
     public bool thirdSucces;
 
-    
+    public StrypifyManager bwSM;
+    public GameManager GM;
+
     public void Start()
     {
         comm.SetActive(false);
@@ -271,6 +273,12 @@ public class GameController : MonoBehaviour
         TwoQ.SetActive(true);
         copyText.SetActive(true);
         secondInput.SetActive(true);
+
+        /*foreach (AudioSource songIndex in bwSM.songs)
+        {
+            songIndex.Stop();
+        }
+        GM.musicPlaying = false;*/
     }
 
     public void TurnOnLanguage()
