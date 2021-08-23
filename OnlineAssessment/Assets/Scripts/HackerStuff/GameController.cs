@@ -51,9 +51,9 @@ public class GameController : MonoBehaviour
     public GameObject wifi;
     public GameObject antivirus;
 
-    private InputField Input1;
-    private InputField Input2;
-    private InputField Input3;
+    public GameObject Input1;
+    public GameObject Input2;
+    public GameObject Input3;
 
     public GameObject copyText;
     public GameObject highlights;
@@ -78,6 +78,23 @@ public class GameController : MonoBehaviour
     public StrypifyManager bwSM;
     public GameManager GM;
 
+    public GameObject inputText1;
+    public GameObject inputText2;
+    public GameObject inputText3;
+
+    public bool wasHacked;
+
+
+    public GameObject Eng1;
+    public GameObject Eng2;
+    public GameObject Eng3;
+    public GameObject Eng4;
+    public GameObject Kor1;
+    public GameObject Kor2;
+    public GameObject Kor3;
+    public GameObject Kor4;
+
+
     public void Start()
     {
         comm.SetActive(false);
@@ -85,12 +102,22 @@ public class GameController : MonoBehaviour
         Invoke("Surprise", 6f);
         hackerCom.Greet();
         wifi.SetActive(true);
+        Eng1.SetActive(false);
+        Eng2.SetActive(false);
+        Eng3.SetActive(false);
+        Eng4.SetActive(false);
+        Kor1.SetActive(true);
+        Kor2.SetActive(true);
+        Kor3.SetActive(true);
+        Kor4.SetActive(true);
 
 
         english = GameObject.FindGameObjectsWithTag("English");
         korean = GameObject.FindGameObjectsWithTag("Korean");
 
-       
+        inputText1.SetActive(false);
+        inputText2.SetActive(false);
+        inputText3.SetActive(false);
 
     }
 
@@ -113,6 +140,7 @@ public class GameController : MonoBehaviour
 
     public void ToExplain()
     {
+        wasHacked = true;
         hackerCom.Explain();
     }
 
@@ -131,13 +159,17 @@ public class GameController : MonoBehaviour
 
     public void GetInput (string guess)
     {
-        playerText.text = guess;    
-       
-        if (guess.ToLower() != discover.ToLower())
-        {            
-            Debug.Log("Typed");
-            Invoke("TypeComplete", 4f);
+        if (wasHacked)
+        {
+            playerText.text = guess;
+
+            if (guess.ToLower() != discover.ToLower())
+            {
+                Debug.Log("Typed");
+                Invoke("TypeComplete", 4f);
+            }
         }
+        
         
 
     }
@@ -146,6 +178,7 @@ public class GameController : MonoBehaviour
     {
         Debug.Log("We can talk!");        
         initialInput.SetActive(false);
+
         comm.SetActive(true);        
         greeting.SetActive(false);        
         Invoke("FirstQ", 12f);
@@ -167,7 +200,7 @@ public class GameController : MonoBehaviour
         if (first.ToLower() == AnswerOne.ToLower())
         {
             
-            
+                      
             OneQ.SetActive(false);
             //Input1.enabled = false;
             wrong.SetActive(false);
@@ -180,9 +213,28 @@ public class GameController : MonoBehaviour
         {
             OneQ.SetActive(false);
             wrong.SetActive(true);
+            Invoke("ReactivateRiddleOne", 4f);
         }
 
 
+    }
+
+    public void ReactivateRiddleOne()
+    {
+        wrong.SetActive(false);
+        OneQ.SetActive(true);
+    }
+
+    public void ReactivateRiddleTwo()
+    {
+        wrong.SetActive(false);
+        TwoQ.SetActive(true);
+    }
+
+    public void ReactivateRiddleThree()
+    {
+        wrong.SetActive(false);
+        ThreeQ.SetActive(true);
     }
 
     public void colourSuccess()
@@ -190,9 +242,18 @@ public class GameController : MonoBehaviour
         wifi.SetActive(false);
         settings.SetActive(true);
         colour.SetActive(true);
-        
+        Eng1.SetActive(false);
+        Eng2.SetActive(false);
+        Eng3.SetActive(false);
+        Eng4.SetActive(false);
+        Kor1.SetActive(true);
+        Kor2.SetActive(true);
+        Kor3.SetActive(true);
+        Kor4.SetActive(true);
+        Input1.SetActive(false);
+        inputText1.SetActive(true);
 
-        foreach(GameObject stickyText in stickyKorean)
+        foreach (GameObject stickyText in stickyKorean)
         {
             stickyText.SetActive(true);
         }
@@ -203,8 +264,17 @@ public class GameController : MonoBehaviour
         wifi.SetActive(false);
         settings.SetActive(true);
         language.SetActive(true);
+        Eng1.SetActive(false);
+        Eng2.SetActive(false);
+        Eng3.SetActive(false);
+        Eng4.SetActive(false);
+        Kor1.SetActive(true);
+        Kor2.SetActive(true);
+        Kor3.SetActive(true);
+        Kor4.SetActive(true);
+        Input2.SetActive(false);
+        inputText2.SetActive(true);
 
-        
     }
     public void GetAnswerTwo(string second)
     {
@@ -212,6 +282,8 @@ public class GameController : MonoBehaviour
 
         if (second.ToLower() == AnswerTwo.ToLower())
         {
+            
+            
             copyText.SetActive(false);
             highlights.SetActive(false);
             rightclick.SetActive(false);
@@ -229,6 +301,7 @@ public class GameController : MonoBehaviour
             copyText.SetActive(false);
             TwoQ.SetActive(false);
             wrong.SetActive(true);
+            Invoke("ReactivateRiddleTwo", 4f);
         }
 
 
@@ -240,6 +313,8 @@ public class GameController : MonoBehaviour
 
         if (third.ToLower() == AnswerThree.ToLower())
         {
+            
+            
             thirdSucces = true;
             ThreeQ.SetActive(false);
             wrong.SetActive(false);
@@ -254,6 +329,7 @@ public class GameController : MonoBehaviour
         {
             ThreeQ.SetActive(false);
             wrong.SetActive(true);
+            Invoke("ReactivateRiddleThree", 4f);
         }
 
     }
@@ -261,6 +337,8 @@ public class GameController : MonoBehaviour
     public void corruptSuccess()
     {
         antivirus.SetActive(true);
+        Input3.SetActive(false);
+        inputText3.SetActive(true);
     }
 
     public void TurnOnColour()
@@ -298,6 +376,7 @@ public class GameController : MonoBehaviour
         right2.SetActive(false);
         settings.SetActive(false);
         language.SetActive(false);
+        wifi.SetActive(true);
         ThreeQ.SetActive(true);
         thirdInput.SetActive(true);
 
@@ -310,12 +389,22 @@ public class GameController : MonoBehaviour
         {
             stickyText.SetActive(true);
         }
+
+        Eng1.SetActive(true);
+        Eng2.SetActive(true);
+        Eng3.SetActive(true);
+        Eng4.SetActive(true);
+        Kor1.SetActive(false);
+        Kor2.SetActive(false);
+        Kor3.SetActive(false);
+        Kor4.SetActive(false);
     }
 
     public void newAntivirus()
     {
         if (thirdSucces)
         {
+            
             right3.SetActive(false);
             antivirus.SetActive(false);
             leaveTime.SetActive(true);

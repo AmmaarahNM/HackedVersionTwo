@@ -53,6 +53,15 @@ public class GameManager : MonoBehaviour
     public bool isCurrentPlaying;
     public AudioSource currentSong;
 
+    public GameObject Eng1;
+    public GameObject Eng2;
+    public GameObject Eng3;
+    public GameObject Eng4;
+    public GameObject Kor1;
+    public GameObject Kor2;
+    public GameObject Kor3;
+    public GameObject Kor4;
+
 
     void Start()
     {
@@ -64,7 +73,14 @@ public class GameManager : MonoBehaviour
         Invoke("Welcome", 1.2f);
         BWname.text = PlayerPrefs.GetString("name", "");
         COLname.text = PlayerPrefs.GetString("name", "");
-
+        Eng1.SetActive(true);
+        Eng2.SetActive(true);
+        Eng3.SetActive(true);
+        Eng4.SetActive(true);
+        Kor1.SetActive(false);
+        Kor2.SetActive(false);
+        Kor3.SetActive(false);
+        Kor4.SetActive(false);
     }
 
     void Welcome()

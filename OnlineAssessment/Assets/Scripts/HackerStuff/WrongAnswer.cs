@@ -10,12 +10,8 @@ public class WrongAnswer : MonoBehaviour
     private string rentText = "";
     private string aOne;
 
-    void Awake()
-    {
-        aOne = "Nope! Try again...";
+   // public string[] wrongAnswers;
 
-
-    }
 
     public void Start()
     {
@@ -24,6 +20,7 @@ public class WrongAnswer : MonoBehaviour
 
     IEnumerator PuzzleText()
     {
+        aOne = "Nope! Try again...";
         for (int i = 0; i < aOne.Length; i++)
         {
             rentText = aOne.Substring(0, i);
