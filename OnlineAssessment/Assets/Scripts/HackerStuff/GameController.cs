@@ -397,7 +397,7 @@ public class GameController : MonoBehaviour
         language.SetActive(false);
         wifi.SetActive(true);
         ThreeQ.SetActive(true);
-        Invoke("firstInputActive", 18f);
+        Invoke("thirdInputActive", 18f);
 
         foreach (GameObject stickyText in stickyKorean)
         {
