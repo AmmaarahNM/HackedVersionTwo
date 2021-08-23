@@ -12,7 +12,7 @@ public class LeaveNow : MonoBehaviour
 
     void Awake()
     {
-        Leave = "Well done!." + "\n" + "\n" + "You have succeeded in entertaining me!." + "\n" + "I hope that you've learned your lesson... and you may want to submit that assignment." + "\n" + "\n" + "Until next time, my friend;).";
+        Leave = "Well done!." + "\n" + "\n" + "You have succeeded in entertaining me!." + "\n" + "I hope that you've learned your lesson... and you may" + "\n" + "want to submit that assignment." + "\n" + "\n" + "Until next time, my friend;).";
 
 
     }

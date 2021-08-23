@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
     public GameObject settings;
     public GameObject colour;
     public GameObject language;
+    public GameObject wifi;
     public GameObject antivirus;
 
     private InputField Input1;
@@ -58,19 +59,37 @@ public class GameController : MonoBehaviour
     public GameObject highlights;
     public GameObject rightclick;
 
+    public UploadScript upload;
+
+    public GameObject[] english;
+    public GameObject[] korean;
+
+    public GameObject koreanTitles;
+    public GameObject englishTitles;
+
     public bool hackerLeft;
 
+    public GameObject[] stickyKorean;
+    public GameObject[] stickyEnglish;
 
     public bool isDiscovered;
+    public bool thirdSucces;
 
+    
     public void Start()
     {
         comm.SetActive(false);
         greeting.SetActive(true);
-        Invoke("Surprise", 9f);
+        Invoke("Surprise", 6f);
         hackerCom.Greet();
-        
-                
+        wifi.SetActive(true);
+
+
+        english = GameObject.FindGameObjectsWithTag("English");
+        korean = GameObject.FindGameObjectsWithTag("Korean");
+
+       
+
     }
 
     
@@ -78,7 +97,7 @@ public class GameController : MonoBehaviour
     {
         greeting.SetActive(false);
         hackedMessage.SetActive(true);
-        Invoke("beginAgain", 4f);
+        Invoke("beginAgain", 3f);
     }
 
     public void beginAgain()
@@ -87,7 +106,7 @@ public class GameController : MonoBehaviour
         hackedMessage.SetActive(false);
         greeting.SetActive(true);
         hackerCom.Lesson();
-        Invoke("ToExplain", 22f);
+        Invoke("ToExplain", 17f);
     }
 
     public void ToExplain()
@@ -115,7 +134,7 @@ public class GameController : MonoBehaviour
         if (guess.ToLower() != discover.ToLower())
         {            
             Debug.Log("Typed");
-            Invoke("TypeComplete", 5f);
+            Invoke("TypeComplete", 4f);
         }
         
 
@@ -127,7 +146,7 @@ public class GameController : MonoBehaviour
         initialInput.SetActive(false);
         comm.SetActive(true);        
         greeting.SetActive(false);        
-        Invoke("FirstQ", 17f);
+        Invoke("FirstQ", 12f);
 
     }
 
@@ -151,7 +170,7 @@ public class GameController : MonoBehaviour
             //Input1.enabled = false;
             wrong.SetActive(false);
             right1.SetActive(true);
-            Invoke("colourSuccess", 10f);
+            Invoke("colourSuccess", 7f);
             Debug.Log("FirstCorrect");
 
         }
@@ -166,14 +185,24 @@ public class GameController : MonoBehaviour
 
     public void colourSuccess()
     {
+        wifi.SetActive(false);
         settings.SetActive(true);
         colour.SetActive(true);
+        
+
+        foreach(GameObject stickyText in stickyKorean)
+        {
+            stickyText.SetActive(true);
+        }
         
     }
     public void languageSuccess()
     {
+        wifi.SetActive(false);
         settings.SetActive(true);
         language.SetActive(true);
+
+        
     }
     public void GetAnswerTwo(string second)
     {
@@ -189,7 +218,7 @@ public class GameController : MonoBehaviour
             right2.SetActive(true);
             right1.SetActive(false);
             //Input2.enabled = false;
-            Invoke("languageSuccess", 10f);
+            Invoke("languageSuccess", 7f);
             
             Debug.Log("SecondCorrect");
         }
@@ -209,7 +238,7 @@ public class GameController : MonoBehaviour
 
         if (third.ToLower() == AnswerThree.ToLower())
         {
-            
+            thirdSucces = true;
             ThreeQ.SetActive(false);
             wrong.SetActive(false);
             right3.SetActive(true);
@@ -217,7 +246,7 @@ public class GameController : MonoBehaviour
             
             //Input3.enabled = false;
             Debug.Log("ThirdCorrect");
-            Invoke("corruptSuccess", 10f);
+            Invoke("corruptSuccess", 7f);
         }
         else
         {
@@ -234,7 +263,8 @@ public class GameController : MonoBehaviour
 
     public void TurnOnColour()
     {
-        //turn colour on 
+        
+        upload.colourBack();
         right1.SetActive(false);
         settings.SetActive(false);
         colour.SetActive(false);
@@ -245,25 +275,53 @@ public class GameController : MonoBehaviour
 
     public void TurnOnLanguage()
     {
+        englishTitles.SetActive(true);
+        koreanTitles.SetActive(false);
+        foreach (GameObject englishObject in english)
+       {
+            englishObject.SetActive(true);
+       }
+
+        foreach (GameObject koreanObject in korean)
+        {
+            koreanObject.SetActive(false);
+        }
+
         right2.SetActive(false);
         settings.SetActive(false);
         language.SetActive(false);
         ThreeQ.SetActive(true);
         thirdInput.SetActive(true);
+
+        foreach (GameObject stickyText in stickyKorean)
+        {
+            stickyText.SetActive(false);
+        }
+
+        foreach (GameObject stickyText in stickyEnglish)
+        {
+            stickyText.SetActive(true);
+        }
     }
 
     public void newAntivirus()
     {
-        right3.SetActive(false);
-        antivirus.SetActive(false);
-        leaveTime.SetActive(true);
-        right3.SetActive(false);
-        Invoke("DisappearNow", 18f);
+        if (thirdSucces)
+        {
+            right3.SetActive(false);
+            antivirus.SetActive(false);
+            leaveTime.SetActive(true);
+            right3.SetActive(false);
+            //hackerLeft = true;
+            Invoke("DisappearNow", 13f);
+        }
+        
     }
 
     public void DisappearNow()
     {
         hackerLeft = true;
         leaveTime.SetActive(false);
+        this.gameObject.SetActive(false);
     }
 }

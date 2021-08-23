@@ -27,12 +27,26 @@ public class UploadScript : MonoBehaviour
     public GameObject successfulSub;
     public GameObject timeOver;
 
+    public GameObject[] english;
+    public GameObject[] korean;
 
+    public GameObject koreanTitles;
+    public GameObject englishTitles;
+
+    public IconPopUps iconPop;
     public void openUpload()
     {
         if (isUploaded)
         {
-            Invoke("HackStart", 0f);
+            if (GC.hackerLeft)
+            {
+                UploadTab.SetActive(true);
+            }
+            else
+            {
+                Invoke("HackStart", 0f);
+            }
+            
         }
         else
         {
@@ -76,6 +90,12 @@ public class UploadScript : MonoBehaviour
         colourGone = false;
         koreanWelcome.SetActive(false);
 
+        english = GameObject.FindGameObjectsWithTag("English");
+        korean = GameObject.FindGameObjectsWithTag("Korean");
+
+        englishTitles.SetActive(true);
+        koreanTitles.SetActive(false);
+
     }
 
     public void UploadButton()
@@ -86,16 +106,18 @@ public class UploadScript : MonoBehaviour
             {
                 successfulSub.SetActive(true);
                 desktop.SetActive(false);
-                
-            }
 
+            }
             else
             {
                 UploadTab.SetActive(false);
                 error.SetActive(true);
                 isUploaded = true;
             }
+
+
             
+                        
             
         }
     }
@@ -103,6 +125,8 @@ public class UploadScript : MonoBehaviour
 
     public void HackStart()
     {
+        iconPop.CloseWindow();
+        //Deactivate Gooble window
         reloadScreen.SetActive(true);
         desktop.SetActive(false);
     }
@@ -113,15 +137,37 @@ public class UploadScript : MonoBehaviour
         desktop.SetActive(true);
         colourGone = true;
         koreanWelcome.SetActive(true);
+        englishTitles.SetActive(false);
+        koreanTitles.SetActive(true);
+
+        foreach (GameObject englishObject in english)
+        {
+            englishObject.SetActive(false);
+            Debug.Log("English");
+        }
+
+        foreach (GameObject koreanObject in korean)
+        {
+            koreanObject.SetActive(true);
+            Debug.Log("Korean");
+        }
+
+        
+
         //Reload Screen finishes and hacking starts...timer faster
         TimerController.instance.BeginTimer();
         Invoke("Disappear", 6.8f);
     }
 
+    public void colourBack()
+    {
+        colourGone = false;
+    }
+
     void Disappear()
     {
         koreanWelcome.SetActive(false);
-        Invoke("beginHack", 4f);
+        beginHack();
     }
 
     public void ClickDisappear()

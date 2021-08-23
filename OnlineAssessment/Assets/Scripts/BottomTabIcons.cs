@@ -25,7 +25,7 @@ public class BottomTabIcons : MonoBehaviour
         {
             appWindow.SetActive(false);
             IPU.thiswWindowOpen = false;
-            IPU.appWindowTransform.SetAsFirstSibling();
+           // IPU.appWindowTransform.SetAsFirstSibling();
         }
 
         else
@@ -34,7 +34,7 @@ public class BottomTabIcons : MonoBehaviour
 
             appWindow.SetActive(true);
             IPU.thiswWindowOpen = true;
-            IPU.appWindowTransform.SetAsLastSibling();
+            //IPU.appWindowTransform.SetAsLastSibling();
         }
     }
 }

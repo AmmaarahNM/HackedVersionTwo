@@ -39,7 +39,7 @@ public class IconPopUps : MonoBehaviour
         foreach (IconPopUps script in otherBoolChecks)
         {
             script.thiswWindowOpen = false;
-            script.appWindowTransform.SetAsFirstSibling();
+            //script.appWindowTransform.SetAsFirstSibling();
         }
     }
     public void OnMouseDown()
@@ -52,7 +52,7 @@ public class IconPopUps : MonoBehaviour
         appWindow.SetActive(true);
         bottomTabIcon.SetActive(true);
         thiswWindowOpen = true;
-        appWindowTransform.SetAsLastSibling();
+        //appWindowTransform.SetAsLastSibling();
 
         if (gameObject.name == "EmailIcon")
         {
