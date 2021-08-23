@@ -229,6 +229,9 @@ public class GameController : MonoBehaviour
     {
         wrong.SetActive(false);
         TwoQ.SetActive(true);
+        copyText.SetActive(true);
+        highlights.SetActive(true);
+        rightclick.SetActive(true);
     }
 
     public void ReactivateRiddleThree()
